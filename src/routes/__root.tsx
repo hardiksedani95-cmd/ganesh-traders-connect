@@ -78,11 +78,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Ganesh Traders — Trusted Grocery & Kirana Store in Sonai, Ahmednagar" },
-      { name: "description", content: "Ganesh Traders in Navi Peth, Sonai — your trusted neighborhood grocery store for rice, dal, spices, oil, snacks and daily essentials. Order on WhatsApp." },
-      { name: "keywords", content: "Ganesh Traders Sonai, Grocery Store Sonai, Kirana Store Sonai, Daily Essentials Sonai, Grocery Shop Ahmednagar, Local Grocery Store Maharashtra" },
+      {
+        name: "description",
+        content:
+          "Ganesh Traders in Navi Peth, Sonai — your trusted neighborhood grocery store for rice, dal, spices, oil, snacks and daily essentials. Order on WhatsApp.",
+      },
+      {
+        name: "keywords",
+        content:
+          "Ganesh Traders Sonai, Grocery Store Sonai, Kirana Store Sonai, Daily Essentials Sonai, Grocery Shop Ahmednagar, Local Grocery Store Maharashtra",
+      },
       { name: "author", content: "Ganesh Traders" },
       { property: "og:title", content: "Ganesh Traders — Trusted Grocery Store in Sonai" },
-      { property: "og:description", content: "Fresh products, best prices, daily essentials. Order on WhatsApp." },
+      {
+        property: "og:description",
+        content: "Fresh products, best prices, daily essentials. Order on WhatsApp.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Ganesh Traders" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -91,7 +102,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,

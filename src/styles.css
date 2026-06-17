@@ -74,7 +74,12 @@
   --whatsapp-foreground: oklch(0.99 0 0);
 
   /* Gradients & shadows */
-  --gradient-hero: linear-gradient(135deg, oklch(0.58 0.17 145) 0%, oklch(0.65 0.15 130) 50%, oklch(0.72 0.18 55) 100%);
+  --gradient-hero: linear-gradient(
+    135deg,
+    oklch(0.58 0.17 145) 0%,
+    oklch(0.65 0.15 130) 50%,
+    oklch(0.72 0.18 55) 100%
+  );
   --gradient-warm: linear-gradient(135deg, oklch(0.72 0.18 55) 0%, oklch(0.78 0.16 40) 100%);
   --gradient-fresh: linear-gradient(180deg, oklch(0.97 0.04 130) 0%, oklch(0.99 0.005 95) 100%);
   --shadow-soft: 0 4px 20px -8px oklch(0.45 0.1 145 / 0.18);
@@ -94,7 +99,10 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
@@ -120,9 +128,15 @@
 }
 
 @keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 oklch(0.62 0.16 152 / 0.5); }
-  70% { box-shadow: 0 0 0 16px oklch(0.62 0.16 152 / 0); }
-  100% { box-shadow: 0 0 0 0 oklch(0.62 0.16 152 / 0); }
+  0% {
+    box-shadow: 0 0 0 0 oklch(0.62 0.16 152 / 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 16px oklch(0.62 0.16 152 / 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 oklch(0.62 0.16 152 / 0);
+  }
 }
 
 @utility pulse-ring {
@@ -130,8 +144,14 @@
 }
 
 @keyframes float-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @utility float-up {

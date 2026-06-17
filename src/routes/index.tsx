@@ -120,7 +120,11 @@ const categories = [
 ];
 
 const features = [
-  { icon: ShieldCheck, title: "Quality Products", desc: "Carefully sourced, freshness guaranteed." },
+  {
+    icon: ShieldCheck,
+    title: "Quality Products",
+    desc: "Carefully sourced, freshness guaranteed.",
+  },
   { icon: Sparkles, title: "Affordable Prices", desc: "Best local rates on daily essentials." },
   { icon: Heart, title: "Trusted Local Store", desc: "Serving Sonai families for years." },
   { icon: Leaf, title: "Fresh Stock", desc: "Daily restocked groceries and produce." },
@@ -147,7 +151,11 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header onOpenOrder={() => openOrder()} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
+      <Header
+        onOpenOrder={() => openOrder()}
+        mobileOpen={mobileOpen}
+        setMobileOpen={setMobileOpen}
+      />
       <Hero onOrder={() => openOrder()} />
       <Categories onOrder={openOrder} />
       <About />
@@ -160,11 +168,7 @@ function Index() {
       <Contact onOrder={() => openOrder()} />
       <Footer />
       <FloatingButtons onOrder={() => openOrder()} />
-      <OrderDialog
-        open={orderOpen}
-        onOpenChange={setOrderOpen}
-        defaultCategory={defaultCategory}
-      />
+      <OrderDialog open={orderOpen} onOpenChange={setOrderOpen} defaultCategory={defaultCategory} />
     </div>
   );
 }
@@ -221,7 +225,10 @@ function Header({
           >
             <Phone className="h-4 w-4" /> Call
           </a>
-          <Button onClick={onOpenOrder} className="rounded-full bg-[var(--whatsapp)] text-[var(--whatsapp-foreground)] hover:bg-[var(--whatsapp)]/90">
+          <Button
+            onClick={onOpenOrder}
+            className="rounded-full bg-[var(--whatsapp)] text-[var(--whatsapp-foreground)] hover:bg-[var(--whatsapp)]/90"
+          >
             <MessageCircle className="mr-2 h-4 w-4" /> Order on WhatsApp
           </Button>
         </div>
@@ -289,9 +296,8 @@ function Hero({ onOrder }: { onOrder: () => void }) {
             </span>
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            Fresh groceries, daily essentials, household products, snacks, beverages,
-            grains, spices, and much more — all available at affordable prices, right
-            in Sonai.
+            Fresh groceries, daily essentials, household products, snacks, beverages, grains,
+            spices, and much more — all available at affordable prices, right in Sonai.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-3">
@@ -303,21 +309,35 @@ function Hero({ onOrder }: { onOrder: () => void }) {
               <MessageCircle className="mr-2 h-5 w-5" /> Order on WhatsApp
             </Button>
             <a href="#categories">
-              <Button size="lg" variant="outline" className="h-12 rounded-full border-2 px-6 text-base font-semibold">
+              <Button
+                size="lg"
+                variant="outline"
+                className="h-12 rounded-full border-2 px-6 text-base font-semibold"
+              >
                 View Categories
               </Button>
             </a>
             <a href={`tel:${PHONE_NUMBER}`}>
-              <Button size="lg" variant="secondary" className="h-12 rounded-full gradient-warm px-6 text-base font-semibold text-secondary-foreground hover:opacity-95">
+              <Button
+                size="lg"
+                variant="secondary"
+                className="h-12 rounded-full gradient-warm px-6 text-base font-semibold text-secondary-foreground hover:opacity-95"
+              >
                 <Phone className="mr-2 h-5 w-5" /> Call Now
               </Button>
             </a>
           </div>
 
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-primary" /> Quality Assured</div>
-            <div className="flex items-center gap-2"><Truck className="h-4 w-4 text-primary" /> Quick Assistance</div>
-            <div className="flex items-center gap-2"><Clock className="h-4 w-4 text-primary" /> Open Daily</div>
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="h-4 w-4 text-primary" /> Quality Assured
+            </div>
+            <div className="flex items-center gap-2">
+              <Truck className="h-4 w-4 text-primary" /> Quick Assistance
+            </div>
+            <div className="flex items-center gap-2">
+              <Clock className="h-4 w-4 text-primary" /> Open Daily
+            </div>
           </div>
         </div>
 
@@ -416,10 +436,9 @@ function About() {
             A trusted name for daily essentials in Sonai.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            Ganesh Traders is a trusted grocery and daily essentials store serving
-            customers in Sonai and nearby areas. We provide quality products,
-            affordable prices, and friendly customer service to meet everyday
-            household needs.
+            Ganesh Traders is a trusted grocery and daily essentials store serving customers in
+            Sonai and nearby areas. We provide quality products, affordable prices, and friendly
+            customer service to meet everyday household needs.
           </p>
           <div className="mt-7 grid grid-cols-2 gap-4">
             <Stat n="100%" label="Quality Stock" />
@@ -544,22 +563,46 @@ function Showcase({ onOrder }: { onOrder: (cat?: string) => void }) {
 /* ---------------- Offers ---------------- */
 function Offers({ onOrder }: { onOrder: () => void }) {
   const banners = [
-    { tag: "Best Deals", title: "Everyday low prices", desc: "Rice, dal, oil & atta at the best local rates.", grad: "gradient-hero" },
-    { tag: "Weekly Offers", title: "Fresh weekly picks", desc: "Special prices on snacks, biscuits & beverages.", grad: "gradient-warm" },
-    { tag: "Festival Specials", title: "Festive essentials", desc: "Dry fruits, ghee & sweets for every occasion.", grad: "gradient-hero" },
+    {
+      tag: "Best Deals",
+      title: "Everyday low prices",
+      desc: "Rice, dal, oil & atta at the best local rates.",
+      grad: "gradient-hero",
+    },
+    {
+      tag: "Weekly Offers",
+      title: "Fresh weekly picks",
+      desc: "Special prices on snacks, biscuits & beverages.",
+      grad: "gradient-warm",
+    },
+    {
+      tag: "Festival Specials",
+      title: "Festive essentials",
+      desc: "Dry fruits, ghee & sweets for every occasion.",
+      grad: "gradient-hero",
+    },
   ];
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-24">
-      <SectionHeading eyebrow="Special Offers" title="This week at Ganesh Traders" sub="Ask us on WhatsApp for live prices and seasonal discounts." />
+      <SectionHeading
+        eyebrow="Special Offers"
+        title="This week at Ganesh Traders"
+        sub="Ask us on WhatsApp for live prices and seasonal discounts."
+      />
       <div className="mt-12 grid gap-5 md:grid-cols-3">
         {banners.map((b) => (
-          <div key={b.title} className={`${b.grad} relative overflow-hidden rounded-3xl p-7 text-primary-foreground shadow-card`}>
+          <div
+            key={b.title}
+            className={`${b.grad} relative overflow-hidden rounded-3xl p-7 text-primary-foreground shadow-card`}
+          >
             <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/10 blur-2xl" />
             <div className="relative">
               <div className="inline-flex items-center rounded-full bg-white/20 px-3 py-1 text-[11px] font-bold uppercase tracking-wide backdrop-blur">
                 {b.tag}
               </div>
-              <h3 className="mt-4 font-display text-2xl font-extrabold tracking-tight">{b.title}</h3>
+              <h3 className="mt-4 font-display text-2xl font-extrabold tracking-tight">
+                {b.title}
+              </h3>
               <p className="mt-2 text-sm text-white/90">{b.desc}</p>
               <button
                 onClick={onOrder}
@@ -588,13 +631,19 @@ function DeliverySection({ onOrder }: { onOrder: () => void }) {
             Convenient Grocery Shopping
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Order your groceries through WhatsApp and get quick assistance for
-            availability and pricing. Send us your list — we'll handle the rest.
+            Order your groceries through WhatsApp and get quick assistance for availability and
+            pricing. Send us your list — we'll handle the rest.
           </p>
           <ul className="mt-6 space-y-3 text-sm">
-            {["Send your grocery list on WhatsApp", "Get instant price & availability", "Pick up or arrange delivery locally"].map((t) => (
+            {[
+              "Send your grocery list on WhatsApp",
+              "Get instant price & availability",
+              "Pick up or arrange delivery locally",
+            ].map((t) => (
               <li key={t} className="flex items-center gap-3">
-                <span className="grid h-6 w-6 place-items-center rounded-full bg-primary/15 text-primary">✓</span>
+                <span className="grid h-6 w-6 place-items-center rounded-full bg-primary/15 text-primary">
+                  ✓
+                </span>
                 <span className="text-foreground">{t}</span>
               </li>
             ))}
@@ -608,7 +657,14 @@ function DeliverySection({ onOrder }: { onOrder: () => void }) {
           </Button>
         </div>
         <div className="order-1 overflow-hidden rounded-3xl border border-border shadow-card md:order-2">
-          <img src={delivery} alt="Grocery delivery" width={1200} height={900} loading="lazy" className="h-full w-full object-cover" />
+          <img
+            src={delivery}
+            alt="Grocery delivery"
+            width={1200}
+            height={900}
+            loading="lazy"
+            className="h-full w-full object-cover"
+          />
         </div>
       </div>
     </section>
@@ -619,10 +675,17 @@ function DeliverySection({ onOrder }: { onOrder: () => void }) {
 function Testimonials() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-24">
-      <SectionHeading eyebrow="Testimonials" title="Loved by our customers" sub="Real words from families in Sonai who shop with us." />
+      <SectionHeading
+        eyebrow="Testimonials"
+        title="Loved by our customers"
+        sub="Real words from families in Sonai who shop with us."
+      />
       <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
         {testimonials.map((t) => (
-          <div key={t.name} className="flex flex-col rounded-2xl border border-border bg-card p-6 shadow-soft">
+          <div
+            key={t.name}
+            className="flex flex-col rounded-2xl border border-border bg-card p-6 shadow-soft"
+          >
             <div className="flex gap-0.5 text-secondary">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className="h-4 w-4" fill="currentColor" />
@@ -655,7 +718,8 @@ function QuickOrder({ onOrder }: { onOrder: () => void }) {
               Need Grocery Items?
             </h2>
             <p className="mt-3 text-base text-white/90 md:text-lg">
-              Send your grocery list directly on WhatsApp and get quick assistance from Ganesh Traders.
+              Send your grocery list directly on WhatsApp and get quick assistance from Ganesh
+              Traders.
             </p>
           </div>
           <Button
@@ -687,24 +751,47 @@ function Contact({ onOrder }: { onOrder: () => void }) {
   return (
     <section id="contact" className="border-t border-border/60 bg-muted/30">
       <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-24">
-        <SectionHeading eyebrow="Contact" title="Visit or message us" sub="We're happy to help with your grocery needs." />
+        <SectionHeading
+          eyebrow="Contact"
+          title="Visit or message us"
+          sub="We're happy to help with your grocery needs."
+        />
         <div className="mt-12 grid gap-8 md:grid-cols-2">
           <div className="space-y-5">
             <div className="rounded-2xl border border-border bg-card p-6">
               <h3 className="font-display text-xl font-bold">Ganesh Traders</h3>
-              <p className="mt-1 text-sm text-muted-foreground">Your Trusted Neighborhood Grocery Store</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Your Trusted Neighborhood Grocery Store
+              </p>
               <div className="mt-6 space-y-4">
                 <InfoRow icon={MapPin} label="Address">
-                  Navi Peth, Sonai,<br />District Ahmednagar, Maharashtra, India
+                  Navi Peth, Sonai,
+                  <br />
+                  District Ahmednagar, Maharashtra, India
                 </InfoRow>
                 <InfoRow icon={Phone} label="Phone">
-                  <a href={`tel:${PHONE_NUMBER}`} className="font-semibold text-foreground hover:text-primary">+91 87797 03262</a>
+                  <a
+                    href={`tel:${PHONE_NUMBER}`}
+                    className="font-semibold text-foreground hover:text-primary"
+                  >
+                    +91 87797 03262
+                  </a>
                 </InfoRow>
                 <InfoRow icon={MessageCircle} label="WhatsApp">
-                  <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="font-semibold text-foreground hover:text-primary">+91 87797 03262</a>
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-semibold text-foreground hover:text-primary"
+                  >
+                    +91 87797 03262
+                  </a>
                 </InfoRow>
                 <InfoRow icon={Mail} label="Email">
-                  <a href="mailto:sudarshanshirsath121212@gmail.com" className="font-semibold break-all text-foreground hover:text-primary">
+                  <a
+                    href="mailto:sudarshanshirsath121212@gmail.com"
+                    className="font-semibold break-all text-foreground hover:text-primary"
+                  >
                     sudarshanshirsath121212@gmail.com
                   </a>
                 </InfoRow>
@@ -729,23 +816,52 @@ function Contact({ onOrder }: { onOrder: () => void }) {
             </div>
           </div>
 
-          <form onSubmit={submit} className="rounded-2xl border border-border bg-card p-6 shadow-soft">
+          <form
+            onSubmit={submit}
+            className="rounded-2xl border border-border bg-card p-6 shadow-soft"
+          >
             <h3 className="font-display text-xl font-bold">Send an inquiry</h3>
-            <p className="mt-1 text-sm text-muted-foreground">Fill in the details and we'll continue on WhatsApp.</p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Fill in the details and we'll continue on WhatsApp.
+            </p>
             <div className="mt-5 grid gap-4">
               <Field label="Name *">
-                <Input required value={name} onChange={(e) => setName(e.target.value)} placeholder="Your full name" />
+                <Input
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Your full name"
+                />
               </Field>
               <Field label="Phone *">
-                <Input required type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="10-digit mobile number" />
+                <Input
+                  required
+                  type="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="10-digit mobile number"
+                />
               </Field>
               <Field label="Requirement *">
-                <Input required value={req} onChange={(e) => setReq(e.target.value)} placeholder="e.g. Basmati rice, atta, dal..." />
+                <Input
+                  required
+                  value={req}
+                  onChange={(e) => setReq(e.target.value)}
+                  placeholder="e.g. Basmati rice, atta, dal..."
+                />
               </Field>
               <Field label="Message">
-                <Textarea value={msg} onChange={(e) => setMsg(e.target.value)} rows={4} placeholder="Any additional details..." />
+                <Textarea
+                  value={msg}
+                  onChange={(e) => setMsg(e.target.value)}
+                  rows={4}
+                  placeholder="Any additional details..."
+                />
               </Field>
-              <Button type="submit" className="h-12 rounded-full bg-[var(--whatsapp)] text-base font-semibold text-[var(--whatsapp-foreground)] hover:bg-[var(--whatsapp)]/90">
+              <Button
+                type="submit"
+                className="h-12 rounded-full bg-[var(--whatsapp)] text-base font-semibold text-[var(--whatsapp-foreground)] hover:bg-[var(--whatsapp)]/90"
+              >
                 <Send className="mr-2 h-4 w-4" /> Send on WhatsApp
               </Button>
             </div>
@@ -765,14 +881,24 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
   );
 }
 
-function InfoRow({ icon: Icon, label, children }: { icon: any; label: string; children: React.ReactNode }) {
+function InfoRow({
+  icon: Icon,
+  label,
+  children,
+}: {
+  icon: React.ComponentType<{ className?: string }>;
+  label: string;
+  children: React.ReactNode;
+}) {
   return (
     <div className="flex items-start gap-3">
       <div className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary">
         <Icon className="h-4 w-4" />
       </div>
       <div className="text-sm">
-        <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{label}</div>
+        <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+          {label}
+        </div>
         <div className="mt-0.5 text-foreground">{children}</div>
       </div>
     </div>
@@ -786,31 +912,56 @@ function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 md:grid-cols-4 md:px-8">
         <div className="md:col-span-2">
           <div className="flex items-center gap-3">
-            <div className="grid h-11 w-11 place-items-center rounded-xl gradient-hero text-primary-foreground font-display font-extrabold">GT</div>
+            <div className="grid h-11 w-11 place-items-center rounded-xl gradient-hero text-primary-foreground font-display font-extrabold">
+              GT
+            </div>
             <div>
               <div className="font-display text-lg font-extrabold">Ganesh Traders</div>
-              <div className="text-xs text-muted-foreground">Your Trusted Neighborhood Grocery Store</div>
+              <div className="text-xs text-muted-foreground">
+                Your Trusted Neighborhood Grocery Store
+              </div>
             </div>
           </div>
           <p className="mt-4 max-w-md text-sm text-muted-foreground">
-            Serving Sonai and nearby areas with quality groceries, daily essentials,
-            and friendly service every day.
+            Serving Sonai and nearby areas with quality groceries, daily essentials, and friendly
+            service every day.
           </p>
         </div>
 
         <div>
           <h4 className="font-display text-sm font-bold uppercase tracking-wide">Contact</h4>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-            <li><a href={`tel:${PHONE_NUMBER}`} className="hover:text-primary">+91 87797 03262</a></li>
-            <li><a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="hover:text-primary">WhatsApp Chat</a></li>
-            <li className="break-all"><a href="mailto:sudarshanshirsath121212@gmail.com" className="hover:text-primary">sudarshanshirsath121212@gmail.com</a></li>
+            <li>
+              <a href={`tel:${PHONE_NUMBER}`} className="hover:text-primary">
+                +91 87797 03262
+              </a>
+            </li>
+            <li>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-primary"
+              >
+                WhatsApp Chat
+              </a>
+            </li>
+            <li className="break-all">
+              <a href="mailto:sudarshanshirsath121212@gmail.com" className="hover:text-primary">
+                sudarshanshirsath121212@gmail.com
+              </a>
+            </li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-display text-sm font-bold uppercase tracking-wide">Address</h4>
           <p className="mt-4 text-sm text-muted-foreground">
-            Navi Peth, Sonai,<br />District Ahmednagar,<br />Maharashtra, India
+            Navi Peth, Sonai,
+            <br />
+            District Ahmednagar,
+            <br />
+            Maharashtra, India
           </p>
         </div>
       </div>
@@ -867,7 +1018,6 @@ function OrderDialog({
 
   const effectiveCategory = category ?? (defaultCategory || undefined);
 
-
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     const cat = effectiveCategory || "General";
@@ -891,17 +1041,31 @@ function OrderDialog({
           <div className="mb-2 inline-flex w-fit items-center gap-2 rounded-full bg-[var(--whatsapp)]/10 px-3 py-1 text-xs font-semibold text-[var(--whatsapp)]">
             <MessageCircle className="h-3.5 w-3.5" /> WhatsApp Order
           </div>
-          <DialogTitle className="font-display text-2xl font-extrabold">Send your order</DialogTitle>
+          <DialogTitle className="font-display text-2xl font-extrabold">
+            Send your order
+          </DialogTitle>
           <DialogDescription>
-            Fill in the details — we'll continue on WhatsApp to confirm price, availability and delivery.
+            Fill in the details — we'll continue on WhatsApp to confirm price, availability and
+            delivery.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={submit} className="grid gap-4 pt-2">
           <Field label="Customer Name *">
-            <Input required value={name} onChange={(e) => setName(e.target.value)} placeholder="Your name" />
+            <Input
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Your name"
+            />
           </Field>
           <Field label="Phone Number *">
-            <Input required type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="10-digit mobile" />
+            <Input
+              required
+              type="tel"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="10-digit mobile"
+            />
           </Field>
           <Field label="Product Category *">
             <Select value={effectiveCategory} onValueChange={setCategory}>
@@ -910,21 +1074,41 @@ function OrderDialog({
               </SelectTrigger>
               <SelectContent>
                 {categories.map((c) => (
-                  <SelectItem key={c.name} value={c.name}>{c.name}</SelectItem>
+                  <SelectItem key={c.name} value={c.name}>
+                    {c.name}
+                  </SelectItem>
                 ))}
               </SelectContent>
             </Select>
           </Field>
           <Field label="Required Products *">
-            <Input required value={products} onChange={(e) => setProducts(e.target.value)} placeholder="e.g. Basmati Rice, Toor Dal" />
+            <Input
+              required
+              value={products}
+              onChange={(e) => setProducts(e.target.value)}
+              placeholder="e.g. Basmati Rice, Toor Dal"
+            />
           </Field>
           <Field label="Quantity *">
-            <Input required value={qty} onChange={(e) => setQty(e.target.value)} placeholder="e.g. 10 KG, 5 packets" />
+            <Input
+              required
+              value={qty}
+              onChange={(e) => setQty(e.target.value)}
+              placeholder="e.g. 10 KG, 5 packets"
+            />
           </Field>
           <Field label="Message (Optional)">
-            <Textarea value={msg} onChange={(e) => setMsg(e.target.value)} rows={3} placeholder="Any additional notes..." />
+            <Textarea
+              value={msg}
+              onChange={(e) => setMsg(e.target.value)}
+              rows={3}
+              placeholder="Any additional notes..."
+            />
           </Field>
-          <Button type="submit" className="h-12 rounded-full bg-[var(--whatsapp)] text-base font-semibold text-[var(--whatsapp-foreground)] hover:bg-[var(--whatsapp)]/90">
+          <Button
+            type="submit"
+            className="h-12 rounded-full bg-[var(--whatsapp)] text-base font-semibold text-[var(--whatsapp-foreground)] hover:bg-[var(--whatsapp)]/90"
+          >
             <Send className="mr-2 h-4 w-4" /> Send Order Request
           </Button>
         </form>
@@ -934,15 +1118,7 @@ function OrderDialog({
 }
 
 /* ---------------- Helpers ---------------- */
-function SectionHeading({
-  eyebrow,
-  title,
-  sub,
-}: {
-  eyebrow: string;
-  title: string;
-  sub?: string;
-}) {
+function SectionHeading({ eyebrow, title, sub }: { eyebrow: string; title: string; sub?: string }) {
   return (
     <div className="mx-auto max-w-2xl text-center">
       <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary">
