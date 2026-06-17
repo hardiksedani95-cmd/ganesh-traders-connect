@@ -860,19 +860,17 @@ function OrderDialog({
 }) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [category, setCategory] = useState(defaultCategory);
+  const [category, setCategory] = useState<string | undefined>(undefined);
   const [products, setProducts] = useState("");
   const [qty, setQty] = useState("");
   const [msg, setMsg] = useState("");
 
-  // sync default when opening
-  if (defaultCategory && defaultCategory !== category && open && !category) {
-    setCategory(defaultCategory);
-  }
+  const effectiveCategory = category ?? (defaultCategory || undefined);
+
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    const cat = category || defaultCategory || "General";
+    const cat = effectiveCategory || "General";
     const text =
       `Hi Ganesh Traders 👋%0A%0AI would like to place an order.%0A%0A` +
       `Customer Name: ${name}%0A` +
@@ -906,7 +904,7 @@ function OrderDialog({
             <Input required type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="10-digit mobile" />
           </Field>
           <Field label="Product Category *">
-            <Select value={category || defaultCategory} onValueChange={setCategory}>
+            <Select value={effectiveCategory} onValueChange={setCategory}>
               <SelectTrigger>
                 <SelectValue placeholder="Select a category" />
               </SelectTrigger>
